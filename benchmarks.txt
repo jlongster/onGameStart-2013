@@ -1,0 +1,136 @@
+Running Emscripten benchmarks... [ Tue Mar 12 17:49:09 2013 | em: commit 8c9a37a40a164dba330390af2eabf5ad05625001 | llvm: /usr/local/bin ]
+Benchmarking JS engine: /Users/james/projects/v8/out/native/d8
+(Emscripten: Running sanity checks)
+test_copy (__main__.benchmark) ... 
+   JavaScript: mean: 1.719 (+-0.001) secs  median: 1.719  range: 1.718-1.721  (noise: 0.061%)  (4 runs)
+   Native    : mean: 0.904 (+-0.003) secs  median: 0.904  range: 0.899-0.907  (noise: 0.357%)  JS is 1.90 X slower
+ok
+test_corrections (__main__.benchmark) ... 
+   JavaScript: mean: 3.659 (+-0.005) secs  median: 3.657  range: 3.654-3.667  (noise: 0.136%)  (4 runs)
+   Native    : mean: 0.997 (+-0.002) secs  median: 0.997  range: 0.996-1.000  (noise: 0.175%)  JS is 3.67 X slower
+ok
+test_fannkuch (__main__.benchmark) ... 
+   JavaScript: mean: 4.247 (+-0.002) secs  median: 4.246  range: 4.245-4.250  (noise: 0.047%)  (4 runs)
+   Native    : mean: 2.205 (+-0.003) secs  median: 2.205  range: 2.201-2.210  (noise: 0.139%)  JS is 1.93 X slower
+ok
+test_fasta_float (__main__.benchmark) ... 
+   JavaScript: mean: 13.010 (+-0.049) secs  median: 13.002  range: 12.954-13.084  (noise: 0.379%)  (4 runs)
+   Native    : mean: 0.953 (+-0.009) secs  median: 0.953  range: 0.940-0.965  (noise: 0.946%)  JS is 13.65 X slower
+ok
+test_life (__main__.benchmark) ... 
+   JavaScript: mean: 7.725 (+-0.015) secs  median: 7.729  range: 7.701-7.741  (noise: 0.196%)  (4 runs)
+   Native    : mean: 0.610 (+-0.004) secs  median: 0.608  range: 0.607-0.618  (noise: 0.712%)  JS is 12.66 X slower
+ok
+test_memops (__main__.benchmark) ... 
+   JavaScript: mean: 3.307 (+-0.005) secs  median: 3.308  range: 3.301-3.314  (noise: 0.144%)  (4 runs)
+   Native    : mean: 1.002 (+-0.001) secs  median: 1.002  range: 1.001-1.003  (noise: 0.078%)  JS is 3.30 X slower
+ok
+test_primes (__main__.benchmark) ... 
+   JavaScript: mean: 3.497 (+-0.005) secs  median: 3.495  range: 3.494-3.505  (noise: 0.130%)  (4 runs)
+   Native    : mean: 0.986 (+-0.001) secs  median: 0.985  range: 0.984-0.987  (noise: 0.142%)  JS is 3.55 X slower
+ok
+test_skinning (__main__.benchmark) ... 
+   JavaScript: mean: 26.977 (+-0.041) secs  median: 26.996  range: 26.908-27.008  (noise: 0.151%)  (4 runs)
+   Native    : mean: 0.964 (+-0.001) secs  median: 0.964  range: 0.963-0.965  (noise: 0.091%)  JS is 28.00 X slower
+ok
+test_zlib (__main__.benchmark) ... <building and saving zlib into cache>  <building and saving zlib_native into cache> 
+   JavaScript: mean: 4.529 (+-0.020) secs  median: 4.523  range: 4.508-4.562  (noise: 0.440%)  (4 runs)
+   Native    : mean: 1.024 (+-0.002) secs  median: 1.025  range: 1.020-1.025  (noise: 0.217%)  JS is 4.42 X slower
+ok
+
+
+**********************************
+
+
+Running Emscripten benchmarks... [ Tue Mar 12 18:02:04 2013 | em: commit 8c9a37a40a164dba330390af2eabf5ad05625001 | llvm: /usr/local/bin ]
+Benchmarking JS engine: /Users/james/projects/mozilla-central/js/src/build-debug/js -m -n -e gcparam('maxBytes', 1024*1024*1024);
+(Emscripten: Running sanity checks)
+test_copy (__main__.benchmark) ... 
+   JavaScript: mean: 1.631 (+-0.004) secs  median: 1.630  range: 1.627-1.637  (noise: 0.262%)  (4 runs)
+   Native    : mean: 0.908 (+-0.005) secs  median: 0.906  range: 0.904-0.916  (noise: 0.503%)  JS is 1.80 X slower
+ok
+test_corrections (__main__.benchmark) ... 
+   JavaScript: mean: 1.767 (+-0.003) secs  median: 1.766  range: 1.764-1.772  (noise: 0.174%)  (4 runs)
+   Native    : mean: 0.997 (+-0.002) secs  median: 0.996  range: 0.995-0.999  (noise: 0.165%)  JS is 1.77 X slower
+ok
+test_fannkuch (__main__.benchmark) ... 
+   JavaScript: mean: 14.591 (+-0.015) secs  median: 14.591  range: 14.571-14.612  (noise: 0.102%)  (4 runs)
+   Native    : mean: 2.201 (+-0.008) secs  median: 2.202  range: 2.191-2.210  (noise: 0.368%)  JS is 6.63 X slower
+ok
+test_fasta_float (__main__.benchmark) ... 
+   JavaScript: mean: 3.018 (+-0.013) secs  median: 3.013  range: 3.005-3.040  (noise: 0.437%)  (4 runs)
+   Native    : mean: 0.942 (+-0.003) secs  median: 0.941  range: 0.938-0.946  (noise: 0.291%)  JS is 3.20 X slower
+ok
+test_life (__main__.benchmark) ... 
+   JavaScript: mean: 1.300 (+-0.002) secs  median: 1.300  range: 1.297-1.302  (noise: 0.165%)  (4 runs)
+   Native    : mean: 0.608 (+-0.001) secs  median: 0.608  range: 0.607-0.609  (noise: 0.180%)  JS is 2.14 X slower
+ok
+test_memops (__main__.benchmark) ... 
+   JavaScript: mean: 3.252 (+-0.006) secs  median: 3.252  range: 3.244-3.258  (noise: 0.188%)  (4 runs)
+   Native    : mean: 1.000 (+-0.003) secs  median: 1.000  range: 0.996-1.003  (noise: 0.312%)  JS is 3.25 X slower
+ok
+test_primes (__main__.benchmark) ... 
+   JavaScript: mean: 1.669 (+-0.003) secs  median: 1.670  range: 1.665-1.671  (noise: 0.158%)  (4 runs)
+   Native    : mean: 0.986 (+-0.003) secs  median: 0.987  range: 0.980-0.990  (noise: 0.352%)  JS is 1.69 X slower
+ok
+test_skinning (__main__.benchmark) ... 
+   JavaScript: mean: 28.515 (+-0.043) secs  median: 28.528  range: 28.448-28.557  (noise: 0.152%)  (4 runs)
+   Native    : mean: 0.962 (+-0.003) secs  median: 0.963  range: 0.958-0.966  (noise: 0.296%)  JS is 29.64 X slower
+ok
+test_zlib (__main__.benchmark) ... <building and saving zlib into cache>  <building and saving zlib_native into cache> 
+
+   JavaScript: mean: 12.142 (+-0.015) secs  median: 12.139  range: 12.125-12.166  (noise: 0.120%)  (4 runs)
+   Native    : mean: 1.026 (+-0.004) secs  median: 1.026  range: 1.022-1.032  (noise: 0.347%)  JS is 11.83 X slower
+ok
+
+
+**********************************
+
+Running Emscripten benchmarks... [ Tue Mar 12 17:56:13 2013 | em: commit 8c9a37a40a164dba330390af2eabf5ad05625001 | llvm: /usr/local/bin ]
+Benchmarking JS engine: /Users/james/projects/odinmonkey/js/src/build-debug/js -m -n -e gcparam('maxBytes', 1024*1024*1024);
+(Emscripten: Running sanity checks)
+test_copy (__main__.benchmark) ... [copy was asm.js'ified]
+
+   JavaScript: mean: 1.685 (+-0.003) secs  median: 1.684  range: 1.681-1.689  (noise: 0.193%)  (4 runs)
+   Native    : mean: 0.905 (+-0.002) secs  median: 0.905  range: 0.902-0.909  (noise: 0.268%)  JS is 1.86 X slower
+ok
+test_corrections (__main__.benchmark) ... [corrections was asm.js'ified]
+
+   JavaScript: mean: 1.260 (+-0.004) secs  median: 1.260  range: 1.255-1.264  (noise: 0.289%)  (4 runs)
+   Native    : mean: 0.996 (+-0.003) secs  median: 0.995  range: 0.994-1.000  (noise: 0.258%)  JS is 1.26 X slower
+ok
+test_fannkuch (__main__.benchmark) ... [fannkuch was asm.js'ified]
+
+   JavaScript: mean: 3.445 (+-0.005) secs  median: 3.444  range: 3.440-3.452  (noise: 0.138%)  (4 runs)
+   Native    : mean: 2.196 (+-0.004) secs  median: 2.197  range: 2.191-2.201  (noise: 0.183%)  JS is 1.57 X slower
+ok
+test_fasta_float (__main__.benchmark) ... [fasta was asm.js'ified]
+
+   JavaScript: mean: 2.038 (+-0.003) secs  median: 2.037  range: 2.034-2.043  (noise: 0.164%)  (4 runs)
+   Native    : mean: 0.940 (+-0.003) secs  median: 0.939  range: 0.936-0.944  (noise: 0.333%)  JS is 2.17 X slower
+ok
+test_life (__main__.benchmark) ... [life was asm.js'ified]
+
+   JavaScript: mean: 1.066 (+-0.003) secs  median: 1.066  range: 1.061-1.069  (noise: 0.262%)  (4 runs)
+   Native    : mean: 0.612 (+-0.003) secs  median: 0.611  range: 0.609-0.617  (noise: 0.491%)  JS is 1.74 X slower
+ok
+test_memops (__main__.benchmark) ... [memops was asm.js'ified]
+
+   JavaScript: mean: 1.636 (+-0.004) secs  median: 1.637  range: 1.630-1.642  (noise: 0.270%)  (4 runs)
+   Native    : mean: 1.000 (+-0.001) secs  median: 1.000  range: 0.998-1.002  (noise: 0.144%)  JS is 1.64 X slower
+ok
+test_primes (__main__.benchmark) ... [primes was asm.js'ified]
+
+   JavaScript: mean: 1.594 (+-0.004) secs  median: 1.595  range: 1.589-1.599  (noise: 0.244%)  (4 runs)
+   Native    : mean: 0.984 (+-0.003) secs  median: 0.983  range: 0.981-0.989  (noise: 0.305%)  JS is 1.62 X slower
+ok
+test_skinning (__main__.benchmark) ... [skinning was asm.js'ified]
+
+   JavaScript: mean: 2.755 (+-0.002) secs  median: 2.755  range: 2.753-2.758  (noise: 0.060%)  (4 runs)
+   Native    : mean: 0.963 (+-0.002) secs  median: 0.964  range: 0.960-0.965  (noise: 0.204%)  JS is 2.86 X slower
+ok
+test_zlib (__main__.benchmark) ... <building and saving zlib into cache>  <building and saving zlib_native into cache> [zlib was asm.js'ified]
+
+   JavaScript: mean: 2.155 (+-0.004) secs  median: 2.153  range: 2.151-2.162  (noise: 0.201%)  (4 runs)
+   Native    : mean: 1.026 (+-0.003) secs  median: 1.026  range: 1.022-1.030  (noise: 0.266%)  JS is 2.10 X slower
+ok

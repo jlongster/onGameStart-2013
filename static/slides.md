@@ -1,15 +1,30 @@
 
-# Slide 1
+# Connect
 
-you you you
+http://talk.jlongster.com/
+
+Who am I?
+
+# Benchmarks
+
+~~~VIEWER~~~
+<div class="key">
+     <span>Native</span>
+     <span>Firefox</span>
+     <span>Chrome</span>
+</div>
+<div class="graph"></div>
+
+<div class="label">
+     Execution times normalized to native [gcc -O2] (lower is better)
+</div>
+~~~ENDVIEWER~~~
 
 # Slide 2
 
-sdfds f
-
 # Slide 3
 
-dfdsf
+Yaya
 
 # Slide 4
 
