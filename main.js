@@ -1,7 +1,7 @@
 var connect = require('connect');
 var http = require('http');
 var WebSocketServer = require('ws').Server;
-var settings = require('settings');
+var settings = require('./settings');
 
 // web server
 
