@@ -3,11 +3,15 @@ $(document).on('keydown', function(e) {
     switch(e.keyCode) {
     case 37:
         // left
-        moveSlides(currentSlide(), prevSlide(), 'right');
+        if(ws.admin) {
+            moveSlides(currentSlide(), prevSlide(), 'right');
+        }
         break;
     case 39:
         // right
-        moveSlides(currentSlide(), nextSlide(), 'left');
+        if(ws.admin) {
+            moveSlides(currentSlide(), nextSlide(), 'left');
+        }
         break;
     case 80:
         // admin login

@@ -11,6 +11,9 @@ ws.onmessage = function(event) {
         form.html("You're in, good luck!");
         setTimeout(function() {
             form.hide();
+            $('body > .greynote').hide();
+            $('.slides').show();
+            ws.admin = true;
         }, 1000);
     }
     else if(msg.showContent) {
@@ -20,7 +23,7 @@ ws.onmessage = function(event) {
 
         if(el.length) {
             var html = (helper.viewerContent ||
-                        '<div class="afternote">' +
+                        '<div class="greynote">' +
                         'Slides will be available after the talk!' +
                         '</div>');
 
