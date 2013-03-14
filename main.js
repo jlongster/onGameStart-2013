@@ -18,9 +18,6 @@ var currentSlide = null;
 wsserver.on('connection', function(ws) {
     connections.push(ws);
     console.log('connected [' + connections.length + ']');
-    
-    // ****** REMOVE THIS FOR PRODUCTION *******
-    ws.admin = true;
 
     ws.on('message', function(msg) {
         msg = JSON.parse(msg);
@@ -50,10 +47,9 @@ wsserver.on('connection', function(ws) {
         connections.splice(connections.indexOf(ws), 1);
         console.log('removing [' + connections.length + ']');
 
-        // ***** REMOVE THIS FOR PRODUCTION ****
-        // if(ws.admin) {
-        //     currentSlide = null;
-        // }
+        if(ws.admin) {
+            currentSlide = null;
+        }
     });
 
     ws.send(JSON.stringify({

@@ -200,37 +200,53 @@ pre {
   font-size: .5em;
 }
 .Benchmarks--micro-,
-.Benchmarks--real-world- {
+.Benchmarks--real-world-,
+.asm-js-benchmarks--micro-,
+.asm-js-benchmarks--real-world- {
   font-size: 1em;
   padding: 4em 5em;
 }
 .Benchmarks--micro- h1,
-.Benchmarks--real-world- h1 {
+.Benchmarks--real-world- h1,
+.asm-js-benchmarks--micro- h1,
+.asm-js-benchmarks--real-world- h1 {
   font-size: 3em;
 }
 .Benchmarks--micro- .graph,
-.Benchmarks--real-world- .graph {
+.Benchmarks--real-world- .graph,
+.asm-js-benchmarks--micro- .graph,
+.asm-js-benchmarks--real-world- .graph {
   width: 80%;
   margin: 0 auto;
 }
 .Benchmarks--micro- .graph rect,
-.Benchmarks--real-world- .graph rect {
+.Benchmarks--real-world- .graph rect,
+.asm-js-benchmarks--micro- .graph rect,
+.asm-js-benchmarks--real-world- .graph rect {
   stroke: white;
 }
 .Benchmarks--micro- .graph rect:nth-of-type(4n+1),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n+1) {
+.Benchmarks--real-world- .graph rect:nth-of-type(4n+1),
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n+1),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n+1) {
   fill: #7495C0;
 }
 .Benchmarks--micro- .graph rect:nth-of-type(4n-2),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n-2) {
+.Benchmarks--real-world- .graph rect:nth-of-type(4n-2),
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n-2),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n-2) {
   fill: #ED3511;
 }
 .Benchmarks--micro- .graph rect:nth-of-type(4n+3),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n+3) {
+.Benchmarks--real-world- .graph rect:nth-of-type(4n+3),
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n+3),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n+3) {
   fill: #4D962A;
 }
 .Benchmarks--micro- .graph .line,
-.Benchmarks--real-world- .graph .line {
+.Benchmarks--real-world- .graph .line,
+.asm-js-benchmarks--micro- .graph .line,
+.asm-js-benchmarks--real-world- .graph .line {
   position: absolute;
   top: 0;
   background-color: #bbbbbb;
@@ -238,19 +254,25 @@ pre {
   z-index: -2;
 }
 .Benchmarks--micro- .key,
-.Benchmarks--real-world- .key {
+.Benchmarks--real-world- .key,
+.asm-js-benchmarks--micro- .key,
+.asm-js-benchmarks--real-world- .key {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 2em;
   overflow: hidden;
 }
 .Benchmarks--micro- .key span,
-.Benchmarks--real-world- .key span {
+.Benchmarks--real-world- .key span,
+.asm-js-benchmarks--micro- .key span,
+.asm-js-benchmarks--real-world- .key span {
   margin-left: 1em;
   float: right;
 }
 .Benchmarks--micro- .key span:before,
-.Benchmarks--real-world- .key span:before {
+.Benchmarks--real-world- .key span:before,
+.asm-js-benchmarks--micro- .key span:before,
+.asm-js-benchmarks--real-world- .key span:before {
   content: ' ';
   display: inline-block;
   width: 20px;
@@ -261,15 +283,21 @@ pre {
   background-color: #7495C0;
 }
 .Benchmarks--micro- .key span:nth-of-type(2n):before,
-.Benchmarks--real-world- .key span:nth-of-type(2n):before {
+.Benchmarks--real-world- .key span:nth-of-type(2n):before,
+.asm-js-benchmarks--micro- .key span:nth-of-type(2n):before,
+.asm-js-benchmarks--real-world- .key span:nth-of-type(2n):before {
   background-color: #ED3511;
 }
 .Benchmarks--micro- .key span:nth-of-type(3n+1):before,
-.Benchmarks--real-world- .key span:nth-of-type(3n+1):before {
+.Benchmarks--real-world- .key span:nth-of-type(3n+1):before,
+.asm-js-benchmarks--micro- .key span:nth-of-type(3n+1):before,
+.asm-js-benchmarks--real-world- .key span:nth-of-type(3n+1):before {
   background-color: #4D962A;
 }
 .Benchmarks--micro- .label,
-.Benchmarks--real-world- .label {
+.Benchmarks--real-world- .label,
+.asm-js-benchmarks--micro- .label,
+.asm-js-benchmarks--real-world- .label {
   text-align: center;
   font-size: 1.8em;
   opacity: 0;
@@ -296,4 +324,13 @@ pre {
 .viewer.crysis,
 .viewer.crysis2 {
   margin-top: 0;
+}
+.asm-js-code pre {
+  font-size: .5em;
+}
+.It-s-Just-Javascript strong {
+  font-weight: normal;
+}
+.Example-Assembly-Output .bam {
+  font-size: .75em;
 }

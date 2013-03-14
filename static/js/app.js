@@ -4,7 +4,7 @@
 var host = window.document.location.host.replace(/:.*/, '');
 var ws = new WebSocket('ws://' + host + ':3999');
 
-/****** REMOVE FOR PRODUCTION *******/
+// REMOVE FOR PRODUCTION
 ws.admin = true;
 
 ws.onmessage = function(event) {
