@@ -21,7 +21,7 @@
 ~~~ENDVIEWER~~~                                                
 
 ~~~NOTES~~~
-* I Love Javascript!
+* I Love JavaScript!
 * Flexible and **huge** reach
 * Crazy JIT compilers have made it fast
 ~~~ENDNOTES~~~
@@ -41,7 +41,7 @@
 I'm talking about how to get the best performance out of
 javascript *by compiling to it*.
 
-# Javascript
+# JavaScript
 
 <div class="bam">
 If you want to run on the web, you *have* to write javascript... 
@@ -84,7 +84,7 @@ Performance
 It's possible!
 </div>
 
-# Javascript as a Platform
+# JavaScript as a Platform
 
 * Certainly javascript as a compilation target has been proven to be successful
 
@@ -92,7 +92,7 @@ It's possible!
 **Could it be that javascript is an "assembly language" for the web?**
 </div>
 
-# Javascript as a Language
+# JavaScript as a Language
 
 * I love javascript!
 * Modern tracing JIT javascript engines make javascript really fast
@@ -162,7 +162,7 @@ C/C++ at the lowest level just operate on number types, like int and double.
 ~~~VIEWER~~~
     var x = foo()|0;   // x is a 32-bit integer
     var y = bar()|0;   // so is y
-    return (x + y)|0;  // no type of overflow checks,
+    return (x + y)|0;  // no type or overflow checks,
                        //   pure 32-bit addition
 ~~~ENDVIEWER~~~
 
@@ -293,7 +293,7 @@ the javascript engine.
 Within an asm.js module, the js engine can analyze the global program
 structure (with types) and optimize away.
 
-# It's Just Javascript
+# It's Just JavaScript
 
 <div class="bam">
 **Remember, with or without asm.js the code runs exactly the same. This
