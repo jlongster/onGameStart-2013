@@ -34,6 +34,16 @@ $(document).on('keydown', function(e) {
 
         e.preventDefault();
         return false;
+    case 70:
+        // fullscreen
+        var b = document.body;
+
+        if(b.mozRequestFullScreen) {
+            b.mozRequestFullScreen();
+        }
+        else if(b.webkitRequestFullScreen()) {
+            b.webkitRequestFullScreen();
+        }
     }
 });
 
@@ -87,24 +97,34 @@ function showSlide(slide) {
         transform: 'translate(0, 0)',
         '-webkit-transform': 'translate(0, 0)'
     });
+
+    var slides = $('.slide');
+    var i = slides.indexOf($('.slide.current')[0]);
+    window.location.hash = i + 1;
 }
 
 function onTransitionEnd(e) {
     var el = $(e.target);
 
     if(el.is('.current')) {
-        var title = el.children('h1').text();
-        var helper = slideHelpers[title];
-
-        if(helper) {
-            if(!helper.inited && helper.init) {
-                helper.init();
-                helper.inited = true;
-            }
-        }
-
-        showContentToViewer(title);
+        initSlide(el);
     }
+}
+
+function initSlide(el) {
+    var title = classify(el.children('h1').text());
+    var helper = slideHelpers[title];
+
+    if(helper) {
+        if(!helper.inited && helper.init) {
+            helper.init();
+            helper.inited = true;
+        }
+    }
+
+    showContentToViewer(title);
+
+    $('a', el).attr('target', '_new');
 }
 
 function onSlidesReady() {
@@ -112,5 +132,16 @@ function onSlidesReady() {
         .on('transitionend', onTransitionEnd)
         .on('webkitTransitionEnd', onTransitionEnd);
 
-    showSlide($('.slide').first());
+    var hash = window.location.hash || '';
+    var slideN = parseInt(window.location.hash.slice(1));
+
+    if(slideN) {
+        var slides = $('.slide');
+        showSlide(slides[slideN - 1]);
+    }
+    else {
+        showSlide($('.slide').first());
+    }
+
+    initSlide($('.slide.current'));
 }

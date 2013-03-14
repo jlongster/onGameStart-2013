@@ -1,0 +1,361 @@
+
+/* 
+ * Background colors:
+ * #63989E - muted blue
+ * #9AB29C - soft green
+ * #657980 - dark gray blue
+ * #546380 - purple
+ *
+ * Foreground colors:
+ * #F0F7A7 - yellow
+ * #60DAE6 - teal
+*/
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #353935;
+    color: #fafafa;    
+}
+
+.viewer {
+    margin-top: 2em;
+}
+
+.greynote {
+    color: #d0d0d0;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 0 black;
+    padding-top: 1em;
+}
+
+.password-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 2000;
+    padding: 2em 3em;
+    background-color: #dadada;
+    display: none;
+}
+
+.password-form button {
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    /****** ADD IN PRODUCTION *****/
+    /* display: none; */
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: #353935;
+    color: #fafafa;
+    padding: 2em 3em;
+    font-size: 3em;
+
+    transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+
+    transform: translate(100%, 0);
+    -webkit-transform: translate(100%, 0);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.viewer {
+    font-size: 3em;
+}
+
+.viewer .greynote {
+    font-size: .8em;
+}
+
+.slide h1 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.slide li {
+    margin-top: 1em;
+}
+
+.slide strong, .slide em {
+    color: #60DAE6;
+}
+
+.slide em a, .slide em a:visited {
+    color: #F0F7A7;
+}
+
+.slide a, .slide a:visited {
+    color: #F0F7A7;
+}
+
+svg {
+    fill: white
+}
+
+.bam {
+    margin-top: 3em;
+    text-align: center;
+}
+
+pre {
+    padding: 1em 0;
+    font-size: .68em;
+}
+
+/* slides */
+
+.broadcast-url h1,
+.title-screen h1 {
+    display: none;
+}
+
+.title-screen h2,
+.title-screen h3 {
+    text-align: center;
+}
+
+.title-screen {
+    padding: 0;
+}
+
+.title-screen h2 {
+    background-color: #657980;
+    padding: 1em 2em;
+    margin-top: 2em;
+    text-shadow: 2px 2px 0 #353535;
+}
+
+.title-screen h3 {
+}
+
+.broadcast-url h2 {
+    color: #60DAE6;
+    text-align: center;
+}
+
+.broadcast-url a, .broadcast-url a:visited {
+    color: #60DAE6;
+}
+
+.broadcast-url h3 {
+    text-align: center;
+}
+
+.second-truth h1 {
+    visibility: hidden;
+}
+
+.A-Third-Incentive {
+    padding: 0;
+}
+
+.A-Third-Incentive h1 {
+    padding: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.A-Third-Incentive .bam {
+    font-size: 1.5em;
+    padding: 1em;
+    background-color: #546380;
+    margin: 0;
+    text-shadow: 2px 2px 0 #353535;
+}
+
+.Performance .bam {
+    margin-top: 2em;
+    color: #F0F7A7;
+    font-weight: bold;
+}
+
+.Javascript-as-a-Platform .bam {
+    margin-top: 2em;
+}
+
+.Javascript-as-a-Language .bam,
+.LLVM-Optimizations .bam {
+    margin-top: 1em;
+    font-size: .75em;
+    color: #FF6600;
+}
+
+.possibilities {
+    padding: 0;
+    padding-top: 2em;
+    text-shadow: 2px 2px 0 #353535;
+}
+
+.possibilities .bam {
+    font-size: 1.5em;
+    padding: 1em;
+    background-color: #546380;
+    margin: 0;
+}
+
+.possibilities h1 {
+    display: none;
+}
+
+.possibilities img {
+    position: absolute;
+    right: 2em;
+    bottom: 0;
+}
+
+.Performance-Gap .bam {
+    margin-top: 0;
+}
+
+.Performance-Gap .bam.line {
+    font-size: .8em;
+}
+
+.Performance-Gap .bam.line strong {
+    font-weight: normal;
+}
+
+.Optimization--Typed-Arrays pre {
+    font-size: .5em;
+}
+
+.Optimization--Typed-Arrays .reference {
+    font-size: .5em;
+}
+
+.Benchmarks--micro-,
+.Benchmarks--real-world-,
+.asm-js-benchmarks--micro-,
+.asm-js-benchmarks--real-world- {
+    font-size: 1em;
+    padding: 4em 5em;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .graph {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .graph rect {
+        stroke: white;
+    }
+
+    .graph rect:nth-of-type(4n+1) {
+        fill: #7495C0;
+    }
+
+    .graph rect:nth-of-type(4n-2) {
+        fill: #ED3511;
+    }
+
+    .graph rect:nth-of-type(4n+3) {
+        fill: #4D962A;
+    }
+
+    .graph .line {
+        position: absolute;
+        top: 0;
+        background-color: #bbbbbb;
+        width: 1px;
+        z-index: -2;
+    }
+
+    .key {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        overflow: hidden;
+    }
+
+    .key span {
+        margin-left: 1em;
+        float: right;
+    }
+
+    .key span:before {
+        content: ' ';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: .5em;
+
+        position: relative;
+        top: .25em;
+
+        background-color: #7495C0;
+    }
+
+    .key span:nth-of-type(2n):before {
+        background-color: #ED3511;
+    }
+
+    .key span:nth-of-type(3n+1):before {
+        background-color: #4D962A;
+    }
+
+    .label {
+        text-align: center;
+        font-size: 1.8em;
+        opacity: 0;
+        transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+    }
+}
+
+.crysis, .crysis2 {
+    padding: 0;
+
+    h1 {
+        display: none;
+        margin: 0;
+    }
+
+    p { 
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.viewer.crysis, .viewer.crysis2 {
+    margin-top: 0;
+}
+
+.asm-js-code pre {
+    font-size: .5em;
+}
+
+.It-s-Just-Javascript strong {
+    font-weight: normal;
+}
+
+.Example-Assembly-Output .bam {
+    font-size: .75em;
+}

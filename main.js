@@ -50,9 +50,10 @@ wsserver.on('connection', function(ws) {
         connections.splice(connections.indexOf(ws), 1);
         console.log('removing [' + connections.length + ']');
 
-        if(ws.admin) {
-            currentSlide = null;
-        }
+        // ***** REMOVE THIS FOR PRODUCTION ****
+        // if(ws.admin) {
+        //     currentSlide = null;
+        // }
     });
 
     ws.send(JSON.stringify({

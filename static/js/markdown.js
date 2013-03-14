@@ -1401,11 +1401,13 @@ expose.renderJsonML = function( jsonml, options ) {
 };
 
 function escapeHTML( text ) {
-  return text.replace( /&/g, "&amp;" )
-             .replace( /</g, "&lt;" )
-             .replace( />/g, "&gt;" )
-             .replace( /"/g, "&quot;" )
-             .replace( /'/g, "&#39;" );
+    // DON'T ESCAPE ME -- jwl
+    // return text.replace( /&/g, "&amp;" )
+    //            .replace( /</g, "&lt;" )
+    //            .replace( />/g, "&gt;" )
+    //            .replace( /"/g, "&quot;" )
+    //            .replace( /'/g, "&#39;" );
+    return text;
 }
 
 function render_tree( jsonml ) {

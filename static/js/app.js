@@ -4,6 +4,9 @@
 var host = window.document.location.host.replace(/:.*/, '');
 var ws = new WebSocket('ws://' + host + ':3999');
 
+/****** REMOVE FOR PRODUCTION *******/
+ws.admin = true;
+
 ws.onmessage = function(event) {
     var msg = JSON.parse(event.data);
     if(msg.authenticated) {
@@ -11,6 +14,7 @@ ws.onmessage = function(event) {
         form.html("You're in, good luck!");
         setTimeout(function() {
             form.hide();
+
             $('body > .greynote').hide();
             $('.slides').show();
             ws.admin = true;
@@ -26,7 +30,7 @@ ws.onmessage = function(event) {
                         '<div class="greynote">' +
                         'Slides will be available after the talk!' +
                         '</div>');
-
+            
             el.html(html);
             el[0].className = 'current viewer';
             el.addClass(classify(title));
@@ -34,6 +38,9 @@ ws.onmessage = function(event) {
             if(helper.viewer) {
                 helper.viewer(el);
             }
+
+            hljs.initHighlighting.called = false;
+            hljs.initHighlighting();
         }
     }
 };
@@ -52,7 +59,7 @@ function showContentToViewer(title) {
 // slides
 
 function extractSlides(str) {
-    var match, accViewer;
+    var match, state;
     var lines = str.split('\n');
     var slide = {
         title: null,
@@ -60,7 +67,8 @@ function extractSlides(str) {
     };
     
     var viewer = {
-        content: ''
+        content: '',
+        only: false
     };
 
     lines.forEach(function(line) {
@@ -72,23 +80,37 @@ function extractSlides(str) {
             slide.title = match[1];
             slide.content = '';
             viewer.content = '';
+            viewer.only = false;
         }
         else if((match = line.match(/~~~VIEWER~~~\s*/))) {
-            accViewer = true;
+            state = 'viewer';
+        }
+        else if((match = line.match(/~~~VIEWERONLY~~~\s*/))) {
+            state = 'viewer';
+            viewer.only = true;
         }
         else if((match = line.match(/~~~ENDVIEWER~~~\s*/))) {
-            accViewer = false;
+            state = null;
         }
-        else {
-            slide.content += line;
+        else if((match = line.match(/~~~NOTES~~~\s*/))) {
+            state = 'notes';
+        }
+        else if((match = line.match(/~~~ENDNOTES~~~\s*/))) {
+            state = null;
+        }
+        else if(state != 'notes') {
+            if(!viewer.only) {
+                slide.content += line + '\n';
+            }
 
-            if(accViewer) {
-                viewer.content += line;
+            if(state == 'viewer') {
+                viewer.content += line + '\n';
             }
         }
     });
 
     processSlide(slide, viewer);
+    hljs.initHighlighting();
 
     // This is only run on master
     if(window.onSlidesReady) {
@@ -98,37 +120,34 @@ function extractSlides(str) {
 
 function processSlide(slide, viewer) {
     var i = $('.slides .slide').length;
+    var safeTitle = classify(slide.title);
 
     // If this is a viewer, this doesn't do anything. Only shows up on
     // master.
     $('.slides').append(
-        '<div class="slide ' + classify(slide.title) + '">' +
+        '<div class="slide ' + safeTitle + '">' +
         '<h1>' + slide.title + '</h1>' +
-        '<div class="content">' + slide.content + '</div>' +
+        '<div class="content">' + markdown.toHTML(slide.content) + '</div>' +
         '</div>'
     );
 
     if(viewer.content) {
-        slideHelpers[slide.title] = slideHelpers[slide.title] || {};
-        slideHelpers[slide.title].viewerContent = viewer.content;
+        slideHelpers[safeTitle] = slideHelpers[safeTitle] || {};
+        slideHelpers[safeTitle].viewerContent = markdown.toHTML(viewer.content);
     }
 }
 
 function classify(name) {
-    return name.replace(/[\s!?*&]/, '-');
+    return name.replace(/[\s\.'!?*&\:\(\)]/g, '-');
 }
 
-function renderMicroBenchmarks() {
-    var chromeData = [1.90, 3.67, 1.93, 13.65, 12.66, 3.30, 3.55];
-    var fxData = [1.80, 1.77, 6.63, 3.20, 2.14, 3.25, 1.69];
-    var asmData = [1.86, 1.26, 1.57, 2.17, 1.74, 1.64, 1.62];
+function renderBenchmarks(labels, chromeData, fxData) {
     var nativeData = [1, 1, 1, 1, 1, 1, 1];
 
     var allData = [];
     for(var i=0; i<chromeData.length; i++) {
-        allData.push(chromeData[i]);
         allData.push(fxData[i]);
-        //allData.push(asmData[i]);
+        allData.push(chromeData[i]);
         allData.push(nativeData[i]);
         allData.push(0);
     }
@@ -143,8 +162,6 @@ function renderMicroBenchmarks() {
         .attr('transform', 'translate(100, 15)');
 
     var x = d3.scale.linear().domain([0, d3.max(allData)]).range(['0%', '80%']);
-
-    var labels = ['copy', 'corrections', 'fannkuch', 'fasta', 'life', 'memops', 'primes'];
 
     d.selectAll('text').data(x.ticks(10)).enter().append('text')
         .attr('class', 'rule')
@@ -176,21 +193,57 @@ function renderMicroBenchmarks() {
         .transition()
         .attr('width', x);
 
-    // d.selectAll('.bar').data(fxData).enter().append('div')
-    //     .style('width', x)
-    //     .attr('class', 'bar');
-
-    // d.selectAll('.bar').data(asmData).enter().append('div')
-    //     .style('width', x)
-    //     .attr('class', 'bar');
-
     $('.current .label').css({ opacity: 1 });
 }
 
+function renderMicroBenchmarks() {
+    var labels = ['copy', 'corrections', 'fannkuch', 'fasta', 'life', 'memops', 'primes'];
+    var chromeData = [1.90, 3.67, 1.93, 13.65, 12.66, 3.30, 3.55];
+    var fxData = [1.80, 1.77, 6.63, 3.20, 2.14, 3.25, 1.69];
+
+    renderBenchmarks(labels, chromeData, fxData);
+}
+
+function renderLargeBenchmarks() {
+    var labels = ['skinning', 'zlib'];
+    var chromeData = [28.0, 4.42];
+    var fxData = [29.64, 11.83];
+
+    renderBenchmarks(labels, chromeData, fxData);
+}
+
+function renderAsmMicroBenchmarks() {
+    var labels = ['copy', 'corrections', 'fannkuch', 'fasta', 'life', 'memops', 'primes'];
+    var chromeData = [1.90, 3.67, 1.93, 13.65, 12.66, 3.30, 3.55];
+    var fxAsmData = [1.86, 1.26, 1.57, 2.17, 1.74, 1.64, 1.62];
+
+    renderBenchmarks(labels, chromeData, fxAsmData);
+}
+
+function renderAsmLargeBenchmarks() {
+    var labels = ['skinning', 'zlib'];
+    var chromeData = [28.0, 4.42];
+    var fxData = [2.86, 2.10];
+
+    renderBenchmarks(labels, chromeData, fxData);
+}
+
 var slideHelpers = {
-    'Benchmarks': {
+    'Benchmarks--micro-': {
         'init': renderMicroBenchmarks,
         'viewer': renderMicroBenchmarks
+    },
+    'Benchmarks--real-world-': {
+        'init': renderLargeBenchmarks,
+        'viewer': renderLargeBenchmarks
+    },
+    'asm-js-benchmarks--micro-': {
+        'init': renderAsmMicroBenchmarks,
+        'viewer': renderAsmMicroBenchmarks
+    },
+    'asm-js-benchmarks--real-world-': {
+        'init': renderAsmLargeBenchmarks,
+        'viewer': renderAsmLargeBenchmarks
     }
 };
 
