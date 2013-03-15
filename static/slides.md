@@ -95,7 +95,7 @@ It's possible!
 # JavaScript as a Language
 
 * I love javascript!
-* Modern tracing JIT javascript engines make javascript really fast
+* Modern engines with JIT compilers with make javascript really fast
 * However, some needs are **too extreme** for javascript as hand-written
 
 <div class="bam">
@@ -117,7 +117,7 @@ sorts of amazing possibilities
 # Performance Gap
 
 <div class="bam line">
-**The fact is there will always be a performance gap between native code and javascript,
+**The fact is there may always be a performance gap between native code and javascript,
 but we can shrink it**
 </div>
 
@@ -151,7 +151,7 @@ dead code, inline, instcombine, constprop, constmerge, etc.
 
 # Optimization: Consistent Types
 
-* Modern js engines use **type inferencing** to optimize code generation
+* Modern js engines use **type inference** to optimize code generation
 * You need *type consistency* in your js code or inference will fail.
   Compiling a statically typed language to js means it's 100% consistent!
 
@@ -187,7 +187,7 @@ seriously <a href="http://www.ustream.tv/recorded/29324270">go watch it!</a>
 
 # Typed Arrays = Memory
 
-* There is **no** garbage collector in compiled C/C++ to javascript code
+* There is **no** garbage collection with compiled C/C++ to javascript code
 * Memory is represented as a large typed array
 
 # Benchmarks (micro)
@@ -222,7 +222,7 @@ seriously <a href="http://www.ustream.tv/recorded/29324270">go watch it!</a>
 
 # Is that it?
 
-* The dynamic nature of javascript inherently costs some
+* The dynamic nature of javascript inherently costs some performance
 * Performance is difficult to predict (especially with GC)
 * But we want this:
 
@@ -248,7 +248,7 @@ explicitly where it can optimize
 
 # asm.js
 
-* The [specification](http://asmjs.org/spec/latest/) is already
+* A [draft specification](http://asmjs.org/spec/latest/) is already
 online, Firefox has an
 [initial implementation](http://hg.mozilla.org/users/lwagner_mozilla.com/odinmonkey/),
 and emscripten is already compiling to it.
@@ -307,8 +307,9 @@ simply provides engines an easy way to optimize a path.**
 ~~~VIEWER~~~
 <div class="key">
      <span>Native</span>
-     <span>Chrome</span>
      <span>Firefox+asm.js</span>
+     <span>Chrome</span>
+     <span>Firefox</span>
 </div>
 <div class="graph"></div>
 
@@ -322,8 +323,9 @@ simply provides engines an easy way to optimize a path.**
 ~~~VIEWER~~~
 <div class="key">
      <span>Native</span>
-     <span>Chrome</span>
      <span>Firefox.asm.js</span>
+     <span>Chrome</span>
+     <span>Firefox</span>
 </div>
 <div class="graph"></div>
 

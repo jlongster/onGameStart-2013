@@ -138,21 +138,22 @@ function processSlide(slide, viewer) {
 }
 
 function classify(name) {
-    return name.replace(/[\s\.'!?*&\:\(\)]/g, '-');
+    return name.replace(/[\s\.'!?*&\:\(\)]/g, '-').toLowerCase();
 }
 
-function renderBenchmarks(labels, chromeData, fxData) {
-    var nativeData = [1, 1, 1, 1, 1, 1, 1];
-
+function renderBenchmarks(labels, dataPoints) {
     var allData = [];
-    for(var i=0; i<chromeData.length; i++) {
-        allData.push(fxData[i]);
-        allData.push(chromeData[i]);
-        allData.push(nativeData[i]);
+    for(var i=0; i<dataPoints[0].length; i++) {
+        dataPoints.forEach(function(data) {
+            allData.push(data[i]);
+        });
+
+        // Push 1 for native and 0 for spacing
+        allData.push(1);
         allData.push(0);
     }
 
-    var barHeight = 15;
+    var barHeight = 12;
     var allHeight = barHeight * allData.length;
 
     var d = d3.select('.current .graph').append('svg')
@@ -174,7 +175,7 @@ function renderBenchmarks(labels, chromeData, fxData) {
     d.selectAll('.barlabel').data(labels).enter().append('text')
         .attr('class', 'barlabel')
         .attr('x', -100)
-        .attr('y', function(d, i) { return i * barHeight * 4 + 40; })
+        .attr('y', function(d, i) { return i * barHeight * (dataPoints.length+2) + 40; })
         .text(String);
 
     d.selectAll('line').data(x.ticks(10)).enter().append('line')
@@ -201,39 +202,41 @@ function renderMicroBenchmarks() {
     var chromeData = [1.90, 3.67, 1.93, 13.65, 12.66, 3.30, 3.55];
     var fxData = [1.80, 1.77, 6.63, 3.20, 2.14, 3.25, 1.69];
 
-    renderBenchmarks(labels, chromeData, fxData);
+    renderBenchmarks(labels, [fxData, chromeData]);
 }
 
 function renderLargeBenchmarks() {
-    var labels = ['skinning', 'zlib'];
-    var chromeData = [28.0, 4.42];
-    var fxData = [29.64, 11.83];
+    var labels = ['skinning', 'zlib', 'bullet'];
+    var chromeData = [28.0, 4.42, 9.5];
+    var fxData = [29.64, 11.83, 12.25];
 
-    renderBenchmarks(labels, chromeData, fxData);
+    renderBenchmarks(labels, [fxData, chromeData]);
 }
 
 function renderAsmMicroBenchmarks() {
     var labels = ['copy', 'corrections', 'fannkuch', 'fasta', 'life', 'memops', 'primes'];
     var chromeData = [1.90, 3.67, 1.93, 13.65, 12.66, 3.30, 3.55];
-    var fxAsmData = [1.86, 1.26, 1.57, 2.17, 1.74, 1.64, 1.62];
+    var fxData = [1.80, 1.77, 6.63, 3.20, 2.14, 3.25, 1.69];
+    var asmData = [1.86, 1.26, 1.57, 2.17, 1.74, 1.64, 1.62];
 
-    renderBenchmarks(labels, chromeData, fxAsmData);
+    renderBenchmarks(labels, [fxData, chromeData, asmData]);
 }
 
 function renderAsmLargeBenchmarks() {
-    var labels = ['skinning', 'zlib'];
-    var chromeData = [28.0, 4.42];
-    var fxData = [2.86, 2.10];
+    var labels = ['skinning', 'zlib', 'bullet'];
+    var chromeData = [28.0, 4.42, 9.5];
+    var fxData = [29.64, 11.83, 12.25];
+    var asmData = [2.86, 2.10, 2.1];
 
-    renderBenchmarks(labels, chromeData, fxData);
+    renderBenchmarks(labels, [fxData, chromeData, asmData]);
 }
 
 var slideHelpers = {
-    'Benchmarks--micro-': {
+    'benchmarks--micro-': {
         'init': renderMicroBenchmarks,
         'viewer': renderMicroBenchmarks
     },
-    'Benchmarks--real-world-': {
+    'benchmarks--real-world-': {
         'init': renderLargeBenchmarks,
         'viewer': renderLargeBenchmarks
     },

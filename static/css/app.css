@@ -135,32 +135,32 @@ pre {
 .second-truth h1 {
   visibility: hidden;
 }
-.A-Third-Incentive {
+.a-third-incentive {
   padding: 0;
 }
-.A-Third-Incentive h1 {
+.a-third-incentive h1 {
   padding: 2em;
   padding-top: 1.5em;
   padding-bottom: 0;
   margin: 0;
 }
-.A-Third-Incentive .bam {
+.a-third-incentive .bam {
   font-size: 1.5em;
   padding: 1em;
   background-color: #546380;
   margin: 0;
   text-shadow: 2px 2px 0 #353535;
 }
-.Performance .bam {
+.performance .bam {
   margin-top: 2em;
   color: #F0F7A7;
   font-weight: bold;
 }
-.Javascript-as-a-Platform .bam {
+.javascript-as-a-platform .bam {
   margin-top: 2em;
 }
-.Javascript-as-a-Language .bam,
-.LLVM-Optimizations .bam {
+.javascript-as-a-language .bam,
+.llvm-optimizations .bam {
   margin-top: 1em;
   font-size: .75em;
   color: #FF6600;
@@ -184,67 +184,49 @@ pre {
   right: 2em;
   bottom: 0;
 }
-.Performance-Gap .bam {
+.performance-gap .bam {
   margin-top: 0;
 }
-.Performance-Gap .bam.line {
+.performance-gap .bam.line {
   font-size: .8em;
 }
 .Performance-Gap .bam.line strong {
   font-weight: normal;
 }
-.Optimization--Typed-Arrays pre {
+.optimization--typed-arrays pre {
   font-size: .5em;
 }
-.Optimization--Typed-Arrays .reference {
+.optimization--typed-arrays .reference {
   font-size: .5em;
 }
-.Benchmarks--micro-,
-.Benchmarks--real-world-,
+.benchmarks--micro-,
+.benchmarks--real-world-,
 .asm-js-benchmarks--micro-,
 .asm-js-benchmarks--real-world- {
   font-size: 1em;
   padding: 4em 5em;
 }
-.Benchmarks--micro- h1,
-.Benchmarks--real-world- h1,
+.benchmarks--micro- h1,
+.benchmarks--real-world- h1,
 .asm-js-benchmarks--micro- h1,
 .asm-js-benchmarks--real-world- h1 {
   font-size: 3em;
 }
-.Benchmarks--micro- .graph,
-.Benchmarks--real-world- .graph,
+.benchmarks--micro- .graph,
+.benchmarks--real-world- .graph,
 .asm-js-benchmarks--micro- .graph,
 .asm-js-benchmarks--real-world- .graph {
   width: 80%;
   margin: 0 auto;
 }
-.Benchmarks--micro- .graph rect,
-.Benchmarks--real-world- .graph rect,
+.benchmarks--micro- .graph rect,
+.benchmarks--real-world- .graph rect,
 .asm-js-benchmarks--micro- .graph rect,
 .asm-js-benchmarks--real-world- .graph rect {
   stroke: white;
 }
-.Benchmarks--micro- .graph rect:nth-of-type(4n+1),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n+1),
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n+1),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n+1) {
-  fill: #7495C0;
-}
-.Benchmarks--micro- .graph rect:nth-of-type(4n-2),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n-2),
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n-2),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n-2) {
-  fill: #ED3511;
-}
-.Benchmarks--micro- .graph rect:nth-of-type(4n+3),
-.Benchmarks--real-world- .graph rect:nth-of-type(4n+3),
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(4n+3),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(4n+3) {
-  fill: #4D962A;
-}
-.Benchmarks--micro- .graph .line,
-.Benchmarks--real-world- .graph .line,
+.benchmarks--micro- .graph .line,
+.benchmarks--real-world- .graph .line,
 .asm-js-benchmarks--micro- .graph .line,
 .asm-js-benchmarks--real-world- .graph .line {
   position: absolute;
@@ -253,8 +235,8 @@ pre {
   width: 1px;
   z-index: -2;
 }
-.Benchmarks--micro- .key,
-.Benchmarks--real-world- .key,
+.benchmarks--micro- .key,
+.benchmarks--real-world- .key,
 .asm-js-benchmarks--micro- .key,
 .asm-js-benchmarks--real-world- .key {
   width: 80%;
@@ -262,15 +244,15 @@ pre {
   margin-bottom: 2em;
   overflow: hidden;
 }
-.Benchmarks--micro- .key span,
-.Benchmarks--real-world- .key span,
+.benchmarks--micro- .key span,
+.benchmarks--real-world- .key span,
 .asm-js-benchmarks--micro- .key span,
 .asm-js-benchmarks--real-world- .key span {
   margin-left: 1em;
   float: right;
 }
-.Benchmarks--micro- .key span:before,
-.Benchmarks--real-world- .key span:before,
+.benchmarks--micro- .key span:before,
+.benchmarks--real-world- .key span:before,
 .asm-js-benchmarks--micro- .key span:before,
 .asm-js-benchmarks--real-world- .key span:before {
   content: ' ';
@@ -280,22 +262,9 @@ pre {
   margin-right: .5em;
   position: relative;
   top: .25em;
-  background-color: #7495C0;
 }
-.Benchmarks--micro- .key span:nth-of-type(2n):before,
-.Benchmarks--real-world- .key span:nth-of-type(2n):before,
-.asm-js-benchmarks--micro- .key span:nth-of-type(2n):before,
-.asm-js-benchmarks--real-world- .key span:nth-of-type(2n):before {
-  background-color: #ED3511;
-}
-.Benchmarks--micro- .key span:nth-of-type(3n+1):before,
-.Benchmarks--real-world- .key span:nth-of-type(3n+1):before,
-.asm-js-benchmarks--micro- .key span:nth-of-type(3n+1):before,
-.asm-js-benchmarks--real-world- .key span:nth-of-type(3n+1):before {
-  background-color: #4D962A;
-}
-.Benchmarks--micro- .label,
-.Benchmarks--real-world- .label,
+.benchmarks--micro- .label,
+.benchmarks--real-world- .label,
 .asm-js-benchmarks--micro- .label,
 .asm-js-benchmarks--real-world- .label {
   text-align: center;
@@ -303,6 +272,62 @@ pre {
   opacity: 0;
   transition: opacity 1s;
   -webkit-transition: opacity 1s;
+}
+.benchmarks--micro- .graph rect:nth-of-type(4n+1),
+.benchmarks--real-world- .graph rect:nth-of-type(4n+1) {
+  fill: #7495c0;
+}
+.benchmarks--micro- .graph rect:nth-of-type(4n-2),
+.benchmarks--real-world- .graph rect:nth-of-type(4n-2) {
+  fill: #ed3511;
+}
+.benchmarks--micro- .graph rect:nth-of-type(4n+3),
+.benchmarks--real-world- .graph rect:nth-of-type(4n+3) {
+  fill: #4d962a;
+}
+.benchmarks--micro- .key span:before,
+.benchmarks--real-world- .key span:before {
+  background-color: #7495c0;
+}
+.benchmarks--micro- .key span:nth-of-type(2n):before,
+.benchmarks--real-world- .key span:nth-of-type(2n):before {
+  background-color: #ed3511;
+}
+.benchmarks--micro- .key span:nth-of-type(3n+1):before,
+.benchmarks--real-world- .key span:nth-of-type(3n+1):before {
+  background-color: #4d962a;
+}
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-4),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-4) {
+  fill: #7495c0;
+}
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-3),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-3) {
+  fill: #ed3511;
+}
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-2),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-2) {
+  fill: #f0f7a7;
+}
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-1),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-1) {
+  fill: #4d962a;
+}
+.asm-js-benchmarks--micro- .key span:before,
+.asm-js-benchmarks--real-world- .key span:before {
+  background-color: #7495c0;
+}
+.asm-js-benchmarks--micro- .key span:nth-of-type(0n+3):before,
+.asm-js-benchmarks--real-world- .key span:nth-of-type(0n+3):before {
+  background-color: #ed3511;
+}
+.asm-js-benchmarks--micro- .key span:nth-of-type(0n+2):before,
+.asm-js-benchmarks--real-world- .key span:nth-of-type(0n+2):before {
+  background-color: #f0f7a7;
+}
+.asm-js-benchmarks--micro- .key span:nth-of-type(0n+1):before,
+.asm-js-benchmarks--real-world- .key span:nth-of-type(0n+1):before {
+  background-color: #4d962a;
 }
 .crysis,
 .crysis2 {
@@ -319,7 +344,15 @@ pre {
 }
 .crysis img,
 .crysis2 img {
-  width: 100%;
+  max-width: 100%;
+  width: 1440px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: block;
 }
 .viewer.crysis,
 .viewer.crysis2 {
@@ -328,9 +361,9 @@ pre {
 .asm-js-code pre {
   font-size: .5em;
 }
-.It-s-Just-Javascript strong {
+.it-s-just-javascript strong {
   font-weight: normal;
 }
-.Example-Assembly-Output .bam {
+.example-assembly-output .bam {
   font-size: .75em;
 }
