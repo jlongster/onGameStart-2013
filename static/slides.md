@@ -2,7 +2,7 @@
 # title-screen
 
 ## The Wonders of Compiled Javascript and asm.js
-### James Long, Mozilla
+### James Long (@jlongster), Mozilla
 
 <div class="bam">
   onGameStart, March 2013
@@ -395,7 +395,7 @@ I am really excited about this! I get to do C/C++ style stuff again!
 
 * [David Herman](https://twitter.com/littlecalculist/)
 * Luke Wagner
-* [Alon Zakai](https://twitter.com/kripken)
+* [Alon Zakai](https://twitter.com/kripken) (watch [his talk](http://www.ustream.tv/recorded/29324270))
 
 <div class="bam">
 These guys made it happen!
@@ -408,5 +408,5 @@ These guys made it happen!
 * Allows for other languages, high-performance games, and other opportunities for the web
 
 <div class="bam">
-James Long, March 15 2013
+James Long (@jlongster), March 15 2013
 </div>
