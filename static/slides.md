@@ -1,8 +1,12 @@
 
 # title-screen
 
-## Compiling Web Apps (needs new title)
+## The Wonders of Compiled Javascript and asm.js
 ### James Long, Mozilla
+
+<div class="bam">
+  onGameStart, March 2013
+</div>
 
 # broadcast-url
 
@@ -19,13 +23,6 @@
 ~~~VIEWERONLY~~~
 <iframe style="width: 600px; height: 450px; margin: 0 auto; display: block;" src="http://jsfiddle.net/24fK3/46/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 ~~~ENDVIEWER~~~                                                
-
-~~~NOTES~~~
-* I Love JavaScript!
-* Flexible and **huge** reach
-* Crazy JIT compilers have made it fast
-~~~ENDNOTES~~~
-
 # First, a Confession
 
 <div class="bam">I'm not talking about **HTML5** game performance.</div>
@@ -293,11 +290,22 @@ the javascript engine.
 Within an asm.js module, the js engine can analyze the global program
 structure (with types) and optimize away.
 
+# Predictability!
+
+* Code is fully compiled before execution, and we can rationalize how
+every line will perform.
+* Also, no garbage collection.
+* Reminiscent of C/C++, but *seamlessly* cross-platform.
+
 # It's Just JavaScript
 
 <div class="bam">
 **Remember, with or without asm.js the code runs exactly the same. This
 simply provides engines an easy way to optimize a path.**
+</div>
+
+<div class="bam small">
+It's also easy to integrate into existing javascript engines.
 </div>
 
 # So how fast is it?
@@ -334,13 +342,18 @@ simply provides engines an easy way to optimize a path.**
 </div>
 ~~~ENDVIEWER~~~
 
+# perf2x
+
+<div class="bam">
+**consistent < 2x performance compared to native**
+</div>
 
 # Example Assembly Output
 
-I [dumped the output](https://gist.github.com/jlongster/5136299) of an
+* I [dumped the output](https://gist.github.com/jlongster/5136299) of an
 asm.js module with Firefox's OdinMonkey engine, and compared it to
-native code compiled with `gcc -O2`. The amount of instructions is
-comparible, though it's a very small test.
+native code compiled with `gcc -O2`.
+* The amount of instructions is comparible, though it's a very small test.
 
 <div class="bam">
 It's nice to see so few instructions per asm.js line, though!
@@ -348,10 +361,52 @@ It's nice to see so few instructions per asm.js line, though!
 
 # Other Possibilities
 
+<div class="bam">
 If C/C++ runs fast, is it possible to compile full VMs to javascript,
 such as Python?
+</div>
+
+# dynamic-languages
+
+<div class="bam">
+Compiling full VM would achive perfect semantics, but at a performance cost.
+</div>
+
+<div class="bam small">
+*If we enabled a javascript-emitting JIT for this use case, that might work!*
+</div>
+
+~~~VIEWERONLY~~~
+![](/img/turtles.jpg)
+~~~ENDVIEWER~~~
 
 # Other Possibilities
 
-Write a new language that compiles straight to asm.js, and possibly
+<div class="bam">
+A new language that compiles straight to asm.js, and possibly
 mix it with javascript? (see [LLJS](http://lljs.org/))
+</div>
+
+~~~NOTES~~~
+I am really excited about this! I get to do C/C++ style stuff again!
+~~~ENDNOTES~~~
+
+# Credits
+
+* [David Herman](https://twitter.com/littlecalculist/)
+* Luke Wagner
+* [Alon Zakai](https://twitter.com/kripken)
+
+<div class="bam">
+These guys made it happen!
+</div>
+
+# Conclusion
+
+* Compiling to javascript is a desirable technique for high-perfomance apps
+* asm.js will land in Firefox Nightly soon, expect at least 2x native performance
+* Allows for other languages, high-performance games, and other opportunities for the web
+
+<div class="bam">
+James Long, March 15 2013
+</div>

@@ -73,6 +73,10 @@ body {
 .viewer .greynote {
   font-size: .8em;
 }
+.viewer img {
+  display: block;
+  margin: 0 auto;
+}
 .slide h1 {
   font-size: 1.5em;
   margin-top: 0;
@@ -104,6 +108,11 @@ pre {
   font-size: .68em;
 }
 /* slides */
+.title-screen .bam {
+  margin-top: -1em;
+  color: #9AB29C;
+  font-size: .75em;
+}
 .broadcast-url h1,
 .title-screen h1 {
   display: none;
@@ -183,6 +192,9 @@ pre {
   position: absolute;
   right: 2em;
   bottom: 0;
+}
+.performance-gap img {
+  display: inline;
 }
 .performance-gap .bam {
   margin-top: 0;
@@ -273,17 +285,17 @@ pre {
   transition: opacity 1s;
   -webkit-transition: opacity 1s;
 }
-.benchmarks--micro- .graph rect:nth-of-type(4n+1),
-.benchmarks--real-world- .graph rect:nth-of-type(4n+1) {
+.benchmarks--micro- .graph rect:nth-of-type(5n-4),
+.benchmarks--real-world- .graph rect:nth-of-type(5n-4) {
   fill: #7495c0;
 }
-.benchmarks--micro- .graph rect:nth-of-type(4n-2),
-.benchmarks--real-world- .graph rect:nth-of-type(4n-2) {
+.benchmarks--micro- .graph rect:nth-of-type(5n-3),
+.benchmarks--real-world- .graph rect:nth-of-type(5n-3) {
   fill: #ed3511;
 }
-.benchmarks--micro- .graph rect:nth-of-type(4n+3),
-.benchmarks--real-world- .graph rect:nth-of-type(4n+3) {
-  fill: #4d962a;
+.benchmarks--micro- .graph rect:nth-of-type(5n-2),
+.benchmarks--real-world- .graph rect:nth-of-type(5n-2) {
+  fill: #ff9900;
 }
 .benchmarks--micro- .key span:before,
 .benchmarks--real-world- .key span:before {
@@ -295,23 +307,23 @@ pre {
 }
 .benchmarks--micro- .key span:nth-of-type(3n+1):before,
 .benchmarks--real-world- .key span:nth-of-type(3n+1):before {
-  background-color: #4d962a;
+  background-color: #ff9900;
 }
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-4),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-4) {
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(6n-5),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(6n-5) {
   fill: #7495c0;
 }
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-3),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-3) {
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(6n-4),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(6n-4) {
   fill: #ed3511;
 }
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-2),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-2) {
-  fill: #f0f7a7;
-}
-.asm-js-benchmarks--micro- .graph rect:nth-of-type(5n-1),
-.asm-js-benchmarks--real-world- .graph rect:nth-of-type(5n-1) {
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(6n-3),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(6n-3) {
   fill: #4d962a;
+}
+.asm-js-benchmarks--micro- .graph rect:nth-of-type(6n-2),
+.asm-js-benchmarks--real-world- .graph rect:nth-of-type(6n-2) {
+  fill: #ff9900;
 }
 .asm-js-benchmarks--micro- .key span:before,
 .asm-js-benchmarks--real-world- .key span:before {
@@ -323,11 +335,11 @@ pre {
 }
 .asm-js-benchmarks--micro- .key span:nth-of-type(0n+2):before,
 .asm-js-benchmarks--real-world- .key span:nth-of-type(0n+2):before {
-  background-color: #f0f7a7;
+  background-color: #4d962a;
 }
 .asm-js-benchmarks--micro- .key span:nth-of-type(0n+1):before,
 .asm-js-benchmarks--real-world- .key span:nth-of-type(0n+1):before {
-  background-color: #4d962a;
+  background-color: #ff9900;
 }
 .crysis,
 .crysis2 {
@@ -345,7 +357,6 @@ pre {
 .crysis img,
 .crysis2 img {
   max-width: 100%;
-  width: 1440px;
   position: absolute;
   top: 0;
   left: 0;
@@ -353,6 +364,12 @@ pre {
   bottom: 0;
   margin: auto;
   display: block;
+}
+.crysis img {
+  width: 1440px;
+}
+.crysis2 img {
+  width: 1350px;
 }
 .viewer.crysis,
 .viewer.crysis2 {
@@ -364,6 +381,23 @@ pre {
 .it-s-just-javascript strong {
   font-weight: normal;
 }
+.perf2x h1 {
+  display: none;
+}
+.bam.small {
+  font-size: .7em;
+}
 .example-assembly-output .bam {
   font-size: .75em;
+}
+.dynamic-languages h1 {
+  display: none;
+}
+.credits li {
+  margin: .5em 0;
+}
+.conclusion .bam {
+  margin-top: 0;
+  text-align: right;
+  color: #9AB29C;
 }

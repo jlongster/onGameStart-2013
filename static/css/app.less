@@ -88,6 +88,11 @@ html, body {
     font-size: .8em;
 }
 
+.viewer img {
+    display: block;
+    margin: 0 auto;
+}
+
 .slide h1 {
     font-size: 1.5em;
     margin-top: 0;
@@ -125,6 +130,12 @@ pre {
 
 /* slides */
 
+.title-screen .bam {
+    margin-top: -1em;
+    color: #9AB29C;
+    font-size: .75em;
+}
+
 .broadcast-url h1,
 .title-screen h1 {
     display: none;
@@ -144,9 +155,6 @@ pre {
     padding: 1em 2em;
     margin-top: 2em;
     text-shadow: 2px 2px 0 #353535;
-}
-
-.title-screen h3 {
 }
 
 .broadcast-url h2 {
@@ -223,6 +231,10 @@ pre {
     position: absolute;
     right: 2em;
     bottom: 0;
+}
+
+.performance-gap img {
+    display: inline;
 }
 
 .performance-gap .bam {
@@ -307,20 +319,20 @@ pre {
 
 @fxBarColor: #7495C0;
 @chromeBarColor: #ED3511;
-@asmBarColor: #F0F7A7;
-@nativeBarColor: #4D962A;
+@asmBarColor: #4D962A;
+@nativeBarColor: #FF9900;
 
 .benchmarks--micro-,
 .benchmarks--real-world- {
-    .graph rect:nth-of-type(4n+1) {
+    .graph rect:nth-of-type(5n-4) {
         fill: @fxBarColor;
     }
 
-    .graph rect:nth-of-type(4n-2) {
+    .graph rect:nth-of-type(5n-3) {
         fill: @chromeBarColor;
     }
 
-    .graph rect:nth-of-type(4n+3) {
+    .graph rect:nth-of-type(5n-2) {
         fill: @nativeBarColor;
     }
 
@@ -339,19 +351,19 @@ pre {
 
 .asm-js-benchmarks--micro-,
 .asm-js-benchmarks--real-world- {
-    .graph rect:nth-of-type(5n-4) {
+    .graph rect:nth-of-type(6n-5) {
         fill: @fxBarColor;
     }
 
-    .graph rect:nth-of-type(5n-3) {
+    .graph rect:nth-of-type(6n-4) {
         fill: @chromeBarColor;
     }
 
-    .graph rect:nth-of-type(5n-2) {
+    .graph rect:nth-of-type(6n-3) {
         fill: @asmBarColor;
     }
 
-    .graph rect:nth-of-type(5n-1) {
+    .graph rect:nth-of-type(6n-2) {
         fill: @nativeBarColor;
     }
 
@@ -405,7 +417,6 @@ pre {
     width: 1350px;
 }
 
-
 .viewer.crysis, .viewer.crysis2 {
     margin-top: 0;
 }
@@ -418,6 +429,28 @@ pre {
     font-weight: normal;
 }
 
+.perf2x h1 {
+    display: none;
+}
+
+.bam.small {
+    font-size: .7em;
+}
+
 .example-assembly-output .bam {
     font-size: .75em;
+}
+
+.dynamic-languages h1 {
+    display: none;
+}
+
+.credits li {
+    margin: .5em 0;
+}
+
+.conclusion .bam {
+    margin-top: 0;
+    text-align: right;
+    color: #9AB29C;
 }

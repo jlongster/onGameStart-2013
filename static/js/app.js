@@ -148,12 +148,13 @@ function renderBenchmarks(labels, dataPoints) {
             allData.push(data[i]);
         });
 
-        // Push 1 for native and 0 for spacing
+        // Push 1 for native and 2 0's for spacing
         allData.push(1);
+        allData.push(0);
         allData.push(0);
     }
 
-    var barHeight = 12;
+    var barHeight = 10;
     var allHeight = barHeight * allData.length;
 
     var d = d3.select('.current .graph').append('svg')
@@ -175,7 +176,7 @@ function renderBenchmarks(labels, dataPoints) {
     d.selectAll('.barlabel').data(labels).enter().append('text')
         .attr('class', 'barlabel')
         .attr('x', -100)
-        .attr('y', function(d, i) { return i * barHeight * (dataPoints.length+2) + 40; })
+        .attr('y', function(d, i) { return i * barHeight * (dataPoints.length+3) + 40; })
         .text(String);
 
     d.selectAll('line').data(x.ticks(10)).enter().append('line')
