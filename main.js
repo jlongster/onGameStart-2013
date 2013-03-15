@@ -23,7 +23,7 @@ wsserver.on('connection', function(ws) {
         msg = JSON.parse(msg);
 
         if(msg.authenticate) {
-            if(msg.authenticate == 'bug') {
+            if(msg.authenticate == 'BOOGER') {
                 ws.admin = true;
                 currentSlide = msg.currentSlide;
 
