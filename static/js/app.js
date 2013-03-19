@@ -1,8 +1,11 @@
 
 // websocketz
 
-var host = window.document.location.host.replace(/:.*/, '');
-var ws = new WebSocket('ws://' + host + ':3999');
+// var host = window.document.location.host.replace(/:.*/, '');
+// var ws = new WebSocket('ws://' + host + ':3999');
+
+// Disable websockets for static viewing
+var ws = {};
 
 ws.onmessage = function(event) {
     var msg = JSON.parse(event.data);

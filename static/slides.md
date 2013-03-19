@@ -8,11 +8,6 @@
   onGameStart, March 2013
 </div>
 
-# broadcast-url
-
-## http:// <a href="http://talk.jlongster.com">talk.jlongster.com</a>
-### for additional content as I talk
-
 # Who am I?
 
 * **webdev** for Mozilla
